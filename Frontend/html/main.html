@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation Hub</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Fixed Header/Navbar -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top p-3">
+        <div class="container-fluid">
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler me-3 d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+            <a class="navbar-brand fs-4 fw-bold" href="#">
+                <i class="bi bi-journal-code me-2 text-info"></i> Project Docs
+            </a>
+            <div class="ms-auto">
+                <a href="#" class="btn btn-outline-info rounded-pill px-3 me-2">
+                    <i class="bi bi-github me-1"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Application Container -->
+    <div class="d-flex">
+
+        <!-- Desktop Sidebar (Hidden on small screens) -->
+        <nav id="sidebar" class="sidebar-width bg-dark text-white p-4 d-none d-lg-block shadow-lg">
+            <h5 class="mb-4 text-info border-bottom pb-2">Documentation</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white doc-link active fw-semibold" href="#introduction"><i
+                            class="bi bi-house-door me-2"></i> Introduction</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white doc-link" href="#getting-started"><i
+                            class="bi bi-play-circle me-2"></i> Getting Started</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white doc-link" href="#core-concepts"><i class="bi bi-puzzle me-2"></i> Core
+                        Concepts</a>
+                    <ul class="nav flex-column ms-3 mt-1 small">
+                        <li class="nav-item"><a class="nav-link text-muted py-1 doc-link" href="#modules">Modules</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-muted py-1 doc-link" href="#data-flow">Data
+                                Flow</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white doc-link" href="#api-reference"><i class="bi bi-code-slash me-2"></i>
+                        API Reference</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white doc-link" href="#troubleshooting"><i
+                            class="bi bi-question-circle me-2"></i> Troubleshooting</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Sidebar (Offcanvas) -->
+        <div class="offcanvas offcanvas-start bg-dark text-white sidebar-width" tabindex="-1" id="sidebarOffcanvas"
+            aria-labelledby="sidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom border-secondary">
+                <h5 class="offcanvas-title text-info" id="sidebarOffcanvasLabel">Navigation</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white doc-link active fw-semibold" href="#introduction"
+                            data-bs-dismiss="offcanvas"><i class="bi bi-house-door me-2"></i> Introduction</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white doc-link" href="#getting-started" data-bs-dismiss="offcanvas"><i
+                                class="bi bi-play-circle me-2"></i> Getting Started</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white doc-link" href="#core-concepts" data-bs-dismiss="offcanvas"><i
+                                class="bi bi-puzzle me-2"></i> Core Concepts</a>
+                        <ul class="nav flex-column ms-3 mt-1 small">
+                            <li class="nav-item"><a class="nav-link text-muted py-1 doc-link" href="#modules"
+                                    data-bs-dismiss="offcanvas">Modules</a></li>
+                            <li class="nav-item"><a class="nav-link text-muted py-1 doc-link" href="#data-flow"
+                                    data-bs-dismiss="offcanvas">Data Flow</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white doc-link" href="#api-reference" data-bs-dismiss="offcanvas"><i
+                                class="bi bi-code-slash me-2"></i> API Reference</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white doc-link" href="#troubleshooting" data-bs-dismiss="offcanvas"><i
+                                class="bi bi-question-circle me-2"></i> Troubleshooting</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-grow-1 gradient-main-content">
+            <div class="container-fluid py-5 px-lg-5">
+
+                <!-- Introduction Section -->
+                <section id="introduction" class="mb-5 pb-4 border-bottom">
+                    <h1 class="display-4 fw-bolder text-dark mb-4">Welcome to the Project Documentation</h1>
+                    <p class="lead text-secondary">
+                        This guide provides a comprehensive overview of the **Phoenix Framework**, detailing its
+                        architecture, installation process, and core functionalities. We aim to make complex concepts
+                        easily digestible.
+                    </p>
+                </section>
+
+                <!-- Getting Started Section -->
+                <section id="getting-started" class="mb-5">
+                    <h2 class="h3 fw-bold mb-4">1. Getting Started</h2>
+                    <div class="card shadow-lg rounded-3 border-0 mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold"><i class="bi bi-cloud-download me-2"></i>
+                                Installation</h5>
+                            <p class="card-text text-muted">
+                                To begin, ensure you have Node.js (v18+) and npm installed. Use the following command to
+                                initialize your new project:
+                            </p>
+                            <pre class="bg-light p-3 rounded text-dark overflow-auto shadow-sm"><code class="text-break">$ npm install -g phoenix-cli
+$ phoenix-cli create my-new-app
+                            </code></pre>
+                            <div class="alert alert-info rounded-3 mt-3 d-flex align-items-center" role="alert">
+                                <i class="bi bi-lightbulb me-2 fs-5"></i>
+                                <div>
+                                    Tip: Use the <code>--typescript</code> flag for a TypeScript-enabled template.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Core Concepts Section -->
+                <section id="core-concepts" class="mb-5">
+                    <h2 class="h3 fw-bold mb-4">2. Core Concepts</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6" id="modules">
+                            <div class="card shadow-lg rounded-3 border-start border-primary border-5 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-dark"><i
+                                            class="bi bi-box-seam me-2 text-primary"></i> Modules</h5>
+                                    <p class="card-text text-muted">The framework is built on a modular, component-based
+                                        architecture. Each module is self-contained and responsible for a single slice
+                                        of application functionality. This enhances maintainability and scalability.</p>
+                                    <button
+                                        class="btn btn-outline-primary btn-sm rounded-pill mt-2 transition-all duration-300">Read
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="data-flow">
+                            <div class="card shadow-lg rounded-3 border-start border-success border-5 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-dark"><i
+                                            class="bi bi-arrow-down-up me-2 text-success"></i> Data Flow</h5>
+                                    <p class="card-text text-muted">Data adheres to a strict, unidirectional flow (Model
+                                        -> View -> Action). This predictability simplifies state debugging and ensures
+                                        that changes are traceable and intentional throughout the application lifecycle.
+                                    </p>
+                                    <button class="btn btn-outline-success btn-sm rounded-pill mt-2">View
+                                        Diagram</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- API Reference Section -->
+                <section id="api-reference" class="mb-5">
+                    <h2 class="h3 fw-bold mb-4">3. API Reference</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle shadow rounded-3 overflow-hidden">
+                            <thead class="bg-secondary text-white">
+                                <tr>
+                                    <th scope="col">Function</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Returns</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>init(config)</code></td>
+                                    <td>Initializes the core framework with configuration.</td>
+                                    <td class="text-success"><code>Promise&lt;AppInstance&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>destroy()</code></td>
+                                    <td>Gracefully shuts down all active services and unmounts modules.</td>
+                                    <td class="text-info"><code>void</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>fetchData(url)</code></td>
+                                    <td>Performs a standardized, authenticated API request.</td>
+                                    <td class="text-success"><code>Promise&lt;Object&gt;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting Section -->
+                <section id="troubleshooting" class="mb-5">
+                    <h2 class="h3 fw-bold mb-4">4. Troubleshooting</h2>
+                    <div class="accordion accordion-flush shadow rounded-3" id="troubleshootAccordion">
+                        <div class="accordion-item rounded-top-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                    aria-controls="collapseOne">
+                                    <i class="bi bi-bug me-2 text-danger"></i> "Module not found" error on startup
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#troubleshootAccordion">
+                                <div class="accordion-body text-muted">
+                                    This usually indicates incomplete dependency installation. Run
+                                    <code>npm install</code> again and verify your <code>package.json</code> file for
+                                    missing entries. Clear your node module cache if the issue persists.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    <i class="bi bi-exclamation-triangle me-2 text-warning"></i> API calls are failing
+                                    with a 401 error
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#troubleshootAccordion">
+                                <div class="accordion-body text-muted">
+                                    A 401 Unauthorized error points to an issue with your authentication token. Ensure
+                                    your <code>init()</code> call includes a valid authentication configuration object
+                                    and that the token has not expired.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white-50 py-3 mt-auto shadow-sm">
+        <div class="container-fluid text-center">
+            <small>&copy; 2025 Phoenix Framework. Documentation powered by Bootstrap 5.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
